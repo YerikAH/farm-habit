@@ -6,10 +6,24 @@ class HomeScreen extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-         child: Text('HomeScreen'),
-      ),
+    return Scaffold(
+      body: Column(
+        children: [
+          Row(
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text("Hoy"),
+                  Text("14 de diciembre")
+                ],
+              ),
+              
+
+            ],
+          )
+        ],
+      )
     );
   }
 }

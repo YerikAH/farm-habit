@@ -1,4 +1,4 @@
-import 'package:farm_habit/screens/screens.dart';
+import 'package:farm_habit/routes/app_routes.dart';
 import 'package:farm_habit/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 
@@ -11,8 +11,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Farm Habit',
       debugShowCheckedModeBanner: false,
+      initialRoute: AppRoutes.initialRoute,
+      routes: AppRoutes.getAppRoutes(),
+      onGenerateRoute:AppRoutes.generateRouting,
       theme: AppTheme.themeConfig,
-      home: const HomeScreen()
     );
   }
 }
