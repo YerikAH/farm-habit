@@ -1,17 +1,40 @@
+import 'package:farm_habit/screens/screens.dart';
 import 'package:farm_habit/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 
-class HomeScreen extends StatelessWidget {
-   
+class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
-  
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  int _selectedIndex = 0;
+  static const List<Widget> _widgetOptions = <Widget>[
+    SettingsScreen(),
+    GetHabitScreen(),
+    AddHabitScreen(),
+  ];
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(),
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(32.0),
+          child: _widgetOptions.elementAt(_selectedIndex),
+        ),
+      ),
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: AppTheme.whiteSky,
-        elevation: 2,
+        elevation: 5,
         iconSize: 26.0,
         unselectedItemColor:AppTheme.black100,
         selectedLabelStyle:const TextStyle(
@@ -39,6 +62,8 @@ class HomeScreen extends StatelessWidget {
             label: "Agregar"
           ),
         ],
+        currentIndex: _selectedIndex,
+        onTap: _onItemTapped,
       ),
     );
   }
