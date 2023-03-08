@@ -25,12 +25,12 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     final List<Shadow> listShadows = [];
-    for (var i = 0; i < 10; i++) {
+    for (var i = 0; i < 5; i++) {
       listShadows.add(
-        const Shadow(
-          color: AppTheme.black100,
-          blurRadius: 150,
-          offset: Offset(0, -5),
+        Shadow(
+          color: AppTheme.sky100.withOpacity(0.2),
+          blurRadius: 100,
+          offset: Offset(0, 0),
         ),
       );
     }
@@ -43,17 +43,21 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: AppTheme.whiteSky,
-        elevation: 5,
-        iconSize: 24.0,
-        unselectedItemColor:AppTheme.black100,
-        selectedLabelStyle: TextStyle(
+        elevation: 7,
+        selectedLabelStyle: const TextStyle(
           fontFamily: "Nunito Sans",
           fontWeight: FontWeight.w700,
-          color:AppTheme.black100,
-          shadows: listShadows,
+          color:AppTheme.sky100,
         ),
-        selectedItemColor: AppTheme.black100,
+        selectedItemColor: AppTheme.sky100,
+        selectedFontSize: 16.0,
+        selectedIconTheme:  IconThemeData(
+          size: 28.0, 
+          shadows: listShadows
+        ),
         unselectedFontSize: 14.0,
+        iconSize: 20.0,
+        unselectedItemColor:AppTheme.black100,
         unselectedLabelStyle: const TextStyle(
           fontFamily: "Nunito Sans",
           color: AppTheme.black100,
