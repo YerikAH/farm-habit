@@ -37,7 +37,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.all(32.0),
+          padding: const EdgeInsets.symmetric(horizontal: 32.0, vertical: 16.0),
           child: _widgetOptions.elementAt(_selectedIndex),
         ),
       ),
