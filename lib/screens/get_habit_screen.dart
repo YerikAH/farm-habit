@@ -66,6 +66,55 @@ class GetHabitScreen extends StatelessWidget {
             )
           ],
         ),
+        const SizedBox(
+          height: 20.0,
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: const [
+            Text(
+              "En progreso",
+              style: TextStyle(
+                fontSize: 14.0, 
+                fontWeight: FontWeight.w700, 
+                fontFamily: "Nunito Sans", 
+                color: AppTheme.black100
+              ),
+            ),
+            Text(
+              "3/10",
+              style: TextStyle(
+                fontSize: 14.0, 
+                fontWeight: FontWeight.w700, 
+                fontFamily: "Nunito Sans", 
+                color: AppTheme.black100
+              ),
+            ),
+          ],
+        ),
+        const SizedBox(
+          height: 5.0,
+        ),
+        Stack(
+          children: [
+            Container(
+              width: double.infinity,
+              height: 7.0,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20.0),
+                color: AppTheme.black10
+              ),
+            ),
+            Container(
+              width: 100.0,
+              height: 7.0,
+              decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20.0),
+              color: AppTheme.sky100,
+              ),
+            )
+          ],
+        )
       ],
     );
   }

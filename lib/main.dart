@@ -1,8 +1,14 @@
 import 'package:farm_habit/routes/app_routes.dart';
 import 'package:farm_habit/theme/app_theme.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
-void main() => runApp(const MyApp());
+void main() {
+    SystemChrome.setSystemUIOverlayStyle( const SystemUiOverlayStyle(
+      statusBarColor: Colors.transparent,
+      statusBarBrightness: Brightness.light));
+  runApp(const MyApp());
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

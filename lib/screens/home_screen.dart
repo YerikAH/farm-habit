@@ -22,9 +22,18 @@ class _HomeScreenState extends State<HomeScreen> {
     });
   }
 
-
   @override
   Widget build(BuildContext context) {
+    final List<Shadow> listShadows = [];
+    for (var i = 0; i < 10; i++) {
+      listShadows.add(
+        const Shadow(
+          color: AppTheme.black100,
+          blurRadius: 150,
+          offset: Offset(0, -5),
+        ),
+      );
+    }
     return Scaffold(
       body: SafeArea(
         child: Padding(
@@ -35,19 +44,22 @@ class _HomeScreenState extends State<HomeScreen> {
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: AppTheme.whiteSky,
         elevation: 5,
-        iconSize: 26.0,
+        iconSize: 24.0,
         unselectedItemColor:AppTheme.black100,
-        selectedLabelStyle:const TextStyle(
+        selectedLabelStyle: TextStyle(
           fontFamily: "Nunito Sans",
-          fontWeight: FontWeight.w700
-        ) ,
+          fontWeight: FontWeight.w700,
+          color:AppTheme.black100,
+          shadows: listShadows,
+        ),
+        selectedItemColor: AppTheme.black100,
         unselectedFontSize: 14.0,
         unselectedLabelStyle: const TextStyle(
           fontFamily: "Nunito Sans",
           color: AppTheme.black100,
-          fontWeight: FontWeight.w700
+          fontWeight: FontWeight.w700,
         ),
-        fixedColor: AppTheme.sky100,
+
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.settings_rounded, ),
