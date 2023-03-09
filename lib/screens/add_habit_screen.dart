@@ -1,3 +1,4 @@
+import 'package:farm_habit/widgets/span_text.dart';
 import 'package:flutter/material.dart';
 
 import '../widgets/widgets.dart';
@@ -10,8 +11,15 @@ class AddHabitScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          AppBarSample(buttonText: "Cancelar",title: "Agregar habito",)
+          AppBarSample(buttonText: "Cancelar",title: "Agregar habito",),
+          const SizedBox(height: 20.0,),
+          TitleForm(title: "Nombre del habito",),
+          const SizedBox(height: 10.0,),
+          TextFieldWidget(hintText: "Ingresa el nombre del habito"),
+          const SizedBox(height: 5.0,),
+          SpanText(description: "Cuando elijas el nombre de tu hábito, asegúrate de que sea una acción clara en lugar de una lucha interna. Por ejemplo, en lugar de 'dejar de procrastinar', elige 'iniciar las tareas temprano'.")
         ],
       )
     );
