@@ -30,10 +30,12 @@ class AddHabitScreen extends StatelessWidget {
           SpanText(description: "Cuando elijas el nombre de tu hábito, asegúrate de que sea una acción clara en lugar de una lucha interna. Por ejemplo, en lugar de 'dejar de procrastinar', elige 'iniciar las tareas temprano'.") ,
           const SizedBox(height: 20.0,),
           TitleForm(title: "Icono del habito ",),
-         const SizedBox(height: 10.0,),
-          TextFieldWidget(hintText: "Ingresa el nombre del habito"),
+          const SizedBox(height: 10.0,),
+          const DropDownField(),
           const SizedBox(height: 5.0,),
-          SpanText(description: "Te recomendamos elegir un icono para tu hábito, de esta forma podrás filtrar y visualizar de manera más clara todos tus hábitos. ¡Anímate a personalizar tu lista de hábitos!") 
+          SpanText(description: "Te recomendamos elegir un icono para tu hábito, de esta forma podrás filtrar y visualizar de manera más clara todos tus hábitos. ¡Anímate a personalizar tu lista de hábitos!"),
+          const SizedBox(height: 20.0,),
+           TitleForm(title: "Días que desarrollaras tus habitos",),
         ],
       )
     );
