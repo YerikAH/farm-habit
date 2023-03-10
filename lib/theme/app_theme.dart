@@ -9,6 +9,7 @@ class AppTheme{
   static const Color black10 = Color(0xffE3E7EE);
   static final ThemeData themeConfig = ThemeData.light().copyWith(
     scaffoldBackgroundColor: whiteSky,
+    useMaterial3: true
   );
 
 

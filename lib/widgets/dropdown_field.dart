@@ -1,5 +1,7 @@
 import 'package:farm_habit/theme/app_theme.dart';
 import 'package:flutter/material.dart';
+// ignore: implementation_imports
+import 'package:dropdown_button2/src/dropdown_button2.dart';
 
 class DropDownField extends StatelessWidget {
    
@@ -33,26 +35,32 @@ class DropDownField extends StatelessWidget {
         "path": "assets/icons/rest.png"
       },
     ];
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
-      decoration: BoxDecoration(
-        border: Border.all(
-          color: AppTheme.black10, 
-          strokeAlign: StrokeAlign.center, 
-          style: BorderStyle.solid, 
-          width: 1.0
+    return DropdownButtonHideUnderline(
+      child: DropdownButton2(
+        barrierDismissible: true,
+        buttonStyleData: ButtonStyleData(
+          height: 35.0,
+         decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10.0),
+          border: Border.all(
+            width: 1.0,
+            strokeAlign: StrokeAlign.center,
+            color: AppTheme.black10,
+            style: BorderStyle.solid
+          )
+         )
         ),
-        borderRadius: BorderRadius.circular(10.0)
-      ),
-      child: DropdownButton(
-        dropdownColor: AppTheme.whiteSky,
+        dropdownStyleData: DropdownStyleData(
+          elevation: 2,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10.0),
+            color: AppTheme.whiteSky,
+          )
+        ),
         isDense: true,
         isExpanded: false,
         underline: Container(),
-        elevation: 8,
-        borderRadius: BorderRadius.circular(15.0),
         value: "nulo",
-        iconSize: 20.0,
         items: pathIcons.map<DropdownMenuItem<String>>((value) {
           return DropdownMenuItem<String>(
             alignment: Alignment.center,

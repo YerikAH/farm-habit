@@ -9,7 +9,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  int _selectedIndex = 0;
+  int _selectedIndex = 1;
   static const List<Widget> _widgetOptions = <Widget>[
     SettingsScreen(),
     GetHabitScreen(),
@@ -30,7 +30,7 @@ class _HomeScreenState extends State<HomeScreen> {
         Shadow(
           color: AppTheme.sky100.withOpacity(0.2),
           blurRadius: 100,
-          offset: Offset(0, 0),
+          offset: const Offset(0, 0),
         ),
       );
     }

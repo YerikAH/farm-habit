@@ -35,7 +35,9 @@ class AddHabitScreen extends StatelessWidget {
           const SizedBox(height: 5.0,),
           SpanText(description: "Te recomendamos elegir un icono para tu hábito, de esta forma podrás filtrar y visualizar de manera más clara todos tus hábitos. ¡Anímate a personalizar tu lista de hábitos!"),
           const SizedBox(height: 20.0,),
-           TitleForm(title: "Días que desarrollaras tus habitos",),
+          TitleForm(title: "Días que desarrollaras tus habitos",),
+          const SizedBox(height: 10.0,),
+          const ButtonWeek()
         ],
       )
     );
