@@ -41,7 +41,7 @@ class SelectTime extends StatelessWidget {
         items: listNumber.isEmpty ? [] : listNumber.map<DropdownMenuItem<String>>((value) {
           return DropdownMenuItem<String>(
             alignment: Alignment.center,
-            value: "$value",
+            value: listNumber.isEmpty ? null: "$value",
             child: Text("$value $timeValue",
               style: const TextStyle(
                 fontFamily: "Nunito Sans",
