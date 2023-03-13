@@ -9,6 +9,7 @@ class ItemHabit extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
+      margin: EdgeInsets.only(bottom: 20.0),
       padding: EdgeInsets.symmetric(horizontal: 24.0, vertical: 16.0),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(24.0),
@@ -35,29 +36,39 @@ class ItemHabit extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(width: 20.0,),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
-                    Text(
-                      "Leer libros fdsafdsafdsafdsafdsafsadfdsafdsafd",
-                      style: TextStyle(
-                        fontFamily: "Nunito Sans",
+                Container(
+                  constraints: const BoxConstraints(
+                    maxWidth: 150.0
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: const [
+                      Text(
+                        "Leer libros",
+                        style: TextStyle(
+                          fontFamily: "Nunito Sans",
+                          overflow: TextOverflow.ellipsis,
+                          fontSize: 16.0,
+                          color: AppTheme.black100,
+                          fontWeight: FontWeight.w700,
+
+                        ),
+                        maxLines: 1,
+                        softWrap: false,
                         overflow: TextOverflow.ellipsis,
-                        fontSize: 16.0,
-                        color: AppTheme.black100,
-                        fontWeight: FontWeight.w700
+                        
                       ),
-                    ),
-                    Text(
-                      "6:00 AM",
-                      style: TextStyle(
-                        fontFamily: "Nunito Sans",
-                        fontSize: 14.0,
-                        color: AppTheme.black70,
-                        fontWeight: FontWeight.w700
-                      ),
-                    )
-                  ],
+                      Text(
+                        "6:00 AM",
+                        style: TextStyle(
+                          fontFamily: "Nunito Sans",
+                          fontSize: 14.0,
+                          color: AppTheme.black70,
+                          fontWeight: FontWeight.w700
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               ],
             ),
