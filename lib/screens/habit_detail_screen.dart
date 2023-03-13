@@ -11,7 +11,7 @@ class HabitDetailScreen extends StatelessWidget {
       body: SingleChildScrollView(
          child: SafeArea(
           child: Container(
-            margin: EdgeInsets.symmetric(horizontal: 32.0, vertical: 16.0),
+            margin: const EdgeInsets.symmetric(horizontal: 32.0, vertical: 16.0),
             child: Column(
               children: [
                 Row(
@@ -22,6 +22,7 @@ class HabitDetailScreen extends StatelessWidget {
                       onTap: () {
                         
                       },
+                      splashColor: Colors.transparent,
                       highlightColor: Colors.transparent,
                       child: const Text(
                         "Volver",
@@ -33,20 +34,28 @@ class HabitDetailScreen extends StatelessWidget {
                         ),
                       ),
                     ),
-                    const Text(
-                      "Leer libros",
-                      style: TextStyle(
-                          fontFamily: "Nunito Sans",
-                          fontSize: 16.0,
-                          fontWeight: FontWeight.w700,
-                          color: AppTheme.black100
-                        ),
+                    Container(
+                      constraints: const BoxConstraints(
+                        maxWidth: 150.0
+                      ),
+                      child: const Text(
+                        "Leer libros",
+                        overflow: TextOverflow.ellipsis,
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            fontFamily: "Nunito Sans",
+                            fontSize: 16.0,
+                            fontWeight: FontWeight.w700,
+                            color: AppTheme.black100
+                          ),
+                      ),
                     ),
                     InkWell(
-                      highlightColor: Colors.transparent,
                       onTap: () {
                         
                       },
+                      splashColor: Colors.transparent,
+                      highlightColor: Colors.transparent,
                       child: const Text(
                         "Editar",
                         style: TextStyle(
@@ -58,7 +67,15 @@ class HabitDetailScreen extends StatelessWidget {
                       ),
                     ),
                   ],
-                )
+                ),
+                const SizedBox(
+                  height: 40.0,
+                    width: double.infinity,
+                    child: Divider(
+                      color: AppTheme.black100,
+                      thickness: 1,
+                    ),
+                  ),
               ],
             ),
           ),
